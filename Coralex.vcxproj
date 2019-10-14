@@ -151,6 +151,7 @@
     <ClCompile Include="src\sound.cpp" />
     <ClCompile Include="src\sprite.cpp" />
     <ClCompile Include="src\spriteSheet.cpp" />
+    <ClCompile Include="src\StateManager.cpp" />
     <ClCompile Include="src\twoWayMultiSprite.cpp" />
     <ClCompile Include="src\vector2f.cpp" />
     <ClCompile Include="src\viewport.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="src\sound.h" />
     <ClInclude Include="src\sprite.h" />
     <ClInclude Include="src\spriteSheet.h" />
+    <ClInclude Include="src\StateManager.h" />
     <ClInclude Include="src\twoWayMultiSprite.h" />
     <ClInclude Include="src\vector2f.h" />
     <ClInclude Include="src\viewport.h" />
