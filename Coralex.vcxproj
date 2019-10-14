@@ -87,11 +87,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalUsingDirectories>C:\Users\small\source\repos\Coralex\include\SDL</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>C:\Users\small\Desktop\Coralex\Coralex\include\SDL</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>C:\Users\small\source\repos\Coralex\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\small\Desktop\Coralex\Coralex\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;expatd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -156,7 +156,6 @@
     <ClCompile Include="src\vector2f.cpp" />
     <ClCompile Include="src\viewport.cpp" />
     <ClCompile Include="src\world.cpp" />
-    <ClCompile Include="StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\bullet.h" />
