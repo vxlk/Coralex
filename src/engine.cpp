@@ -177,6 +177,11 @@ void Engine::update(Uint32 ticks) {
 
   world.update();
   viewport.update(); // always update viewport last
+
+  Gamedata cache; //should read new file
+  if (cache == Gamedata::getInstance())
+	  std::cout << "match\n";
+  else std::cout << "mismatch";
 }
 
 void Engine::switchSprite(){
