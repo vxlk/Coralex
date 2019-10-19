@@ -131,6 +131,21 @@
   <transparency>true</transparency>
 </Sniper>
 
+<SniperD>
+  <file>src/assets/sniper.png</file>
+  <startLoc x="825" y="60"/>
+  <frames>1</frames>
+  <frameInterval>50</frameInterval>
+  <speedX>200</speedX>
+  <speedY>200</speedY>
+  <chunk>
+        <size>16</size>
+        <distance>200</distance>
+  </chunk>
+  <safeDistance>150</safeDistance>
+  <transparency>true</transparency>
+</SniperD>
+
 <SniperPlayer>
   <file>src/assets/sniper.png</file>
   <bullet>raybeam</bullet>

@@ -3,6 +3,7 @@
 #include <map>
 #include "vector2f.h"
 #include "parseXML.h"
+#include <vector>
 
 class Gamedata {
 public:
@@ -19,6 +20,12 @@ public:
 	float getRandFloat(float min, float max) const;
 	bool  checkTag(const std::string&) const;
 
+	void checkForChange();
+	void dealWithChange(Gamedata &snapshot);
+	void Diff(Gamedata &new_data);
+
+	map <std::string, std::string> data() { return gameData; }
+
 	Gamedata& operator=(const Gamedata&) = delete;
 
 	bool operator==(const Gamedata&);
@@ -26,8 +33,7 @@ public:
 private:
 	ParseXML parser;
 	const map<std::string, std::string> gameData;
-
-	
+	std::vector<std::pair<std::string, std::string>> diff;
 };
 
 inline bool Gamedata::operator==(const Gamedata& rhs)

@@ -3,6 +3,7 @@
 #include <limits>
 #include <cmath>
 #include "gameData.h"
+#include <algorithm>
 
 Gamedata& Gamedata::getInstance() {
   static Gamedata gamedata;
@@ -85,4 +86,23 @@ void Gamedata::displayData() const {
   */
 }
 
+void Gamedata::checkForChange() {
+	Gamedata snapshot;
+	if (snapshot == *this) return;
+	else dealWithChange(snapshot);
+}
 
+void Gamedata::dealWithChange(Gamedata &snapshot) {
+	//find the difference between the two
+	Diff(snapshot);
+}
+
+// does not modify, uses reference for efficiency
+void Gamedata::Diff(Gamedata& new_d) {
+	auto new_data = new_d.data();
+	std::set_difference(new_data.begin(), new_data.end(), 
+						gameData.begin(), gameData.end(), 
+						std::back_inserter(diff));
+	
+	auto i = diff.size();
+}
