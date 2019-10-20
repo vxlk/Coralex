@@ -157,6 +157,9 @@
     <ClCompile Include="src\spriteSheet.cpp" />
     <ClCompile Include="src\StateManager.cpp" />
     <ClCompile Include="src\twoWayMultiSprite.cpp" />
+    <ClCompile Include="src\UI\codeEditor.cpp" />
+    <ClCompile Include="src\UI\component.cpp" />
+    <ClCompile Include="src\UI\customTexture.cpp" />
     <ClCompile Include="src\vector2f.cpp" />
     <ClCompile Include="src\viewport.cpp" />
     <ClCompile Include="src\world.cpp" />
@@ -191,6 +194,10 @@
     <ClInclude Include="src\spriteSheet.h" />
     <ClInclude Include="src\StateManager.h" />
     <ClInclude Include="src\twoWayMultiSprite.h" />
+    <ClInclude Include="src\UI\codeEditor.h" />
+    <ClInclude Include="src\UI\component.h" />
+    <ClInclude Include="src\UI\customTexture.h" />
+    <ClInclude Include="src\UI\dictionary.h" />
     <ClInclude Include="src\vector2f.h" />
     <ClInclude Include="src\viewport.h" />
     <ClInclude Include="src\world.h" />
