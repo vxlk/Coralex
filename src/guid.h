@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
-#include "include/UUID/uuid.h"
+#include <uuid.h>
 
 /// Globally Unique Identifier
 /// This is used appended to each object in the database
@@ -14,19 +14,34 @@ class Guid
 
 public:
 
-	inline std::string text() { return uuids::to_string(id.value()); }
+	//todo could be optimized
+	constexpr inline const bool isInitialized() noexcept { return id.is_nil(); }
 
+	Guid generate();
+	inline std::string text() { return uuids::to_string(id); }
+
+	inline constexpr uuids::uuid getUUID() noexcept { return this->id; }
 };
 
 /// The book keeper of all guids loaded into a scene
 /// this 
 class GuidManager final {
+
+	std::vector<Guid> guids;
+
+	//todo : open xml file, parse every guid and add to table
+	GuidManager() {}
+
+public:
+
 	inline static GuidManager& instance() {
 		static GuidManager m;
 		return m;
 	}
+	//implement this
+	const bool hasCollision(Guid) const { return false; }
 
-	std::vector<Guid> guids;
-}
+
+};
 
 

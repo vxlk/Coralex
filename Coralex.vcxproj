@@ -87,7 +87,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalUsingDirectories>C:\Users\small\Desktop\Coralex\Coralex\include\SDL;C:\Users\small\Desktop\Coralex\Coralex\include\UUID</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>C:\Users\small\Desktop\Coralex\Coralex\include\SDL;C:\Users\small\Desktop\Coralex\Coralex\include\UUID;</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>C:\Users\small\Desktop\Coralex\Coralex\include\SDL;C:\Users\small\Desktop\Coralex\Coralex\include\UUID;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +129,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="guid.cpp" />
     <ClCompile Include="src\bullet.cpp" />
     <ClCompile Include="src\chunk.cpp" />
     <ClCompile Include="src\clock.cpp" />
@@ -135,6 +137,7 @@
     <ClCompile Include="src\explodingSprite.cpp" />
     <ClCompile Include="src\frameGenerator.cpp" />
     <ClCompile Include="src\gameData.cpp" />
+    <ClCompile Include="src\guid.cpp" />
     <ClCompile Include="src\hud.cpp" />
     <ClCompile Include="src\image.cpp" />
     <ClCompile Include="src\imageFactory.cpp" />
@@ -169,6 +172,7 @@
     <ClInclude Include="src\explodingSprite.h" />
     <ClInclude Include="src\frameGenerator.h" />
     <ClInclude Include="src\gameData.h" />
+    <ClInclude Include="src\guid.h" />
     <ClInclude Include="src\hud.h" />
     <ClInclude Include="src\image.h" />
     <ClInclude Include="src\imageFactory.h" />
@@ -190,6 +194,7 @@
     <ClInclude Include="src\vector2f.h" />
     <ClInclude Include="src\viewport.h" />
     <ClInclude Include="src\world.h" />
+    <ClInclude Include="src\xml_info.h" />
     <ClInclude Include="StateManager.h" />
   </ItemGroup>
   <ItemGroup>

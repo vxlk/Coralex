@@ -105,7 +105,7 @@
     <ClCompile Include="src\StateManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="guid.cpp">
+    <ClCompile Include="src\guid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -205,6 +205,12 @@
     </ClInclude>
     <ClInclude Include="guid.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\guid.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xml_info.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

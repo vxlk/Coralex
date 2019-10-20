@@ -4,6 +4,7 @@
 #include "vector2f.h"
 #include "parseXML.h"
 #include <vector>
+#include "xml_info.h"
 
 class Gamedata {
 public:
@@ -29,7 +30,7 @@ public:
 	Gamedata& operator=(const Gamedata&) = delete;
 
 	bool operator==(const Gamedata&);
-	Gamedata(const std::string& fn = "src/xmlSpec/game.xml");
+	Gamedata(const std::string& fn = xmlMain);
 private:
 	ParseXML parser;
 	const map<std::string, std::string> gameData;
