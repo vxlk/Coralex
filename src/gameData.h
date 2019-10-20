@@ -38,5 +38,5 @@ private:
 
 inline bool Gamedata::operator==(const Gamedata& rhs)
 {
-	return this->gameData == rhs.gameData;
+	return this->gameData.size() == rhs.gameData.size(); //flag a change if anything happens to the file
 }

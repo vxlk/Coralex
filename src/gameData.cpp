@@ -100,7 +100,7 @@ void Gamedata::dealWithChange(Gamedata &snapshot) {
 // does not modify, uses reference for efficiency
 void Gamedata::Diff(Gamedata& new_d) {
 	auto new_data = new_d.data();
-	std::set_difference(new_data.begin(), new_data.end(), 
+	std::set_symmetric_difference(new_data.begin(), new_data.end(), 
 						gameData.begin(), gameData.end(), 
 						std::back_inserter(diff));
 	

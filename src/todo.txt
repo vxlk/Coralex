@@ -1,1 +1,3 @@
-adding the same name doesnt register
+generate unique key for each variable added
+then access that variable 
+array snipers;

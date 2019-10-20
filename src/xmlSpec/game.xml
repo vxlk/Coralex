@@ -157,6 +157,17 @@
   <transparency>true</transparency>
 </SniperPlayer>
 
+<SniperPlayer>
+  <file>src/assets/sniper.png</file>
+  <bullet>raybeam</bullet>
+  <startLoc x="75" y="725"/>
+  <frames>1</frames>
+  <frameInterval>50</frameInterval>
+  <speedX>200</speedX>
+  <speedY>200</speedY>
+  <transparency>true</transparency>
+</SniperPlayer>
+
 <raybeam>
   <file>src/assets/raybeam.png</file>
   <interval>50</interval>
