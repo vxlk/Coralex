@@ -102,10 +102,10 @@
     <ClCompile Include="src\world.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StateManager.cpp">
+    <ClCompile Include="src\StateManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\StateManager.cpp">
+    <ClCompile Include="guid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -202,6 +202,9 @@
     </ClInclude>
     <ClInclude Include="src\StateManager.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="guid.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

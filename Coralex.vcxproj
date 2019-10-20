@@ -87,7 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalUsingDirectories>C:\Users\small\Desktop\Coralex\Coralex\include\SDL</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>C:\Users\small\Desktop\Coralex\Coralex\include\SDL;C:\Users\small\Desktop\Coralex\Coralex\include\UUID</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="guid.cpp" />
     <ClCompile Include="src\bullet.cpp" />
     <ClCompile Include="src\chunk.cpp" />
     <ClCompile Include="src\clock.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="src\world.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="guid.h" />
     <ClInclude Include="src\bullet.h" />
     <ClInclude Include="src\chunk.h" />
     <ClInclude Include="src\clock.h" />
