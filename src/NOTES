@@ -1,16 +1,3 @@
-
-Meyer's Item #11 in Modern:
-  clock
-  engine
-  frameGenerator
-  gameData
-  imageFactory
-  IoMod
-  ParseXML
-  viewport
-  world
-  sprite
-
-Rule of zero and Rule of Three:
-  Sprite
-  MultiSprite
+x button doesnt work
+text editor doesnt take text
+make rendercontext not a singleton

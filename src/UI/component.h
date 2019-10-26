@@ -1,5 +1,7 @@
 #pragma once
 
+namespace ui {
+
 /// Describes an element of the user interface
 class Component
 {
@@ -33,3 +35,4 @@ protected:
 
 };
 
+}//namespace ui

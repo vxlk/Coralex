@@ -71,6 +71,7 @@ Engine::Engine() :
 
   strategies.push_back( new RectangularCollisionStrategy );
 
+  editor = std::make_unique<ui::CodeEditor>();
 
   std::cout << "Loading complete" << std::endl;
 }

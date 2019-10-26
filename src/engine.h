@@ -8,6 +8,7 @@
 #include "smartSprite.h"
 #include "sound.h"
 #include "menuEngine.h"
+#include "UI/codeEditor.h"
 
 class PlayerSprite; //forward declare
 class CollisionStrategy;
@@ -21,39 +22,43 @@ public:
 
   Engine(const Engine&) = delete;
   Engine& operator=(const Engine&) = delete;
+
 private:
-  MenuEngine* menuEngine;
-  const RenderContext& rc; //*
-  const IoMod& io;
-  Clock& clock;
+
+	MenuEngine* menuEngine;
+	const RenderContext& rc; //* if its a singleton why the fuck does engine have one lmao
+	const IoMod& io;
+	Clock& clock;
   
-  SDL_Renderer * const renderer;
-  World world;
-  Viewport& viewport;
+	SDL_Renderer * const renderer; //this is def not needed
+	World world;
+	Viewport& viewport;
 
-  std::vector<SmartSprite*> drawables;
+	std::vector<SmartSprite*> drawables;
 
-  PlayerSprite* playerTank;
-  PlayerSprite* playerSniper;
+	PlayerSprite* playerTank;
+	PlayerSprite* playerSniper;
   
-  SDLSound* sounds;
-  std::vector<CollisionStrategy*> strategies;
+	SDLSound* sounds;
+	std::vector<CollisionStrategy*> strategies;
   
-  int currentSprite;
+	std::unique_ptr<ui::CodeEditor> editor;
 
-  bool makeVideo;
+	int currentSprite;
 
-  void draw() const;
-  void update(Uint32);
+	bool makeVideo;
 
-  bool hudIsShown = false;
+	void draw() const;
+	void update(Uint32);
 
-  void drawFPS(const int &x, const int &y, const SDL_Color& c) const;
-  void drawName(const int& x, const int& y, const SDL_Color& c) const;
-  void drawHUD();
+	bool hudIsShown = false;
 
-  void printScales() const;
-  void checkForCollisions();
+	void drawFPS(const int &x, const int &y, const SDL_Color& c) const;
+	void drawName(const int& x, const int& y, const SDL_Color& c) const;
+	void drawHUD();
 
-  const std::string name = "Tyler Small";
+	void printScales() const;
+	void checkForCollisions();
+
+	const std::string name = "Tyler Small";
 };

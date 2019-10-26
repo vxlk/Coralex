@@ -1,12 +1,14 @@
 #include "codeEditor.h"
 #include "../gameData.h"
+#include "..//renderContext.h"
 
-CodeEditor::CodeEditor() {
+namespace ui {
+
+CodeEditor::CodeEditor() noexcept {
 	gInputTextTexture.loadFromRenderedText(contents.c_str(), textColor);
 	//Enable text input
 	SDL_StartTextInput();
-
-	gFont = TTF_OpenFont("..//Coralex/src/fonts/arial.tff", 28);
+	this->textEditorContext = std::make_unique<RenderContext>();
 }
 
 void CodeEditor::eventHandler(const SDL_Event& e)
@@ -67,17 +69,18 @@ void CodeEditor::render()
 	}
 
 	//Clear screen
-	SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-	SDL_RenderClear(gRenderer);
+	SDL_SetRenderDrawColor(this->textEditorContext->getRenderer(), 0xFF, 0xFF, 0xFF, 0xFF);
+	SDL_RenderClear(this->textEditorContext->getRenderer());
 
 	//Render text textures
 	gPromptTextTexture.render((Gamedata::getInstance().getXmlInt("width") - gPromptTextTexture.getWidth()) / 2, 0);
 	gInputTextTexture.render((Gamedata::getInstance().getXmlInt("width") - gInputTextTexture.getWidth()) / 2, gPromptTextTexture.getHeight());
 
 	//Update screen
-	SDL_RenderPresent(gRenderer);
+	SDL_RenderPresent(this->textEditorContext->getRenderer());
 
 	//Disable text input
 	SDL_StopTextInput();
 	SDL_StopTextInput();
 }
+}//namespace ui

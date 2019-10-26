@@ -1,24 +1,21 @@
 #pragma once
-
-#include "SDL.h"
 #include "component.h"
 #include "customTexture.h"
 #include <string>
+#include <memory>
+
+class RenderContext;
+
+namespace ui {
 
 class CodeEditor : Component
 {
 public:
 	
-	CodeEditor() noexcept {}
-	CodeEditor(SDL_Renderer *renderer, SDL_Window *win) noexcept : gRenderer(renderer), gWindow(win) {}
-
+	CodeEditor() noexcept;
+	
 	virtual ~CodeEditor() noexcept
 	{
-		SDL_DestroyRenderer(gRenderer);
-		SDL_DestroyWindow(gWindow);
-		gWindow = NULL;
-		gRenderer = NULL;
-
 		SDL_Quit();
 	}
 
@@ -38,12 +35,8 @@ private:
 	LTexture gPromptTextTexture;
 	LTexture gInputTextTexture;
 
-	//The window we'll be rendering to
-	SDL_Window *gWindow = nullptr;
+	std::unique_ptr<RenderContext> textEditorContext;
 
-	//The window renderer
-	SDL_Renderer *gRenderer = nullptr;
-
-	TTF_Font* gFont = nullptr;
 };
 
+}//namespace ui

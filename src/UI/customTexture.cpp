@@ -1,12 +1,14 @@
 #include "customTexture.h"
 #include "SDL_image.h"
+#include "..//gameData.h"
 
 LTexture::LTexture()
 {
 	//Initialize
-	mTexture = NULL;
+	mTexture = nullptr;
 	mWidth = 0;
 	mHeight = 0;
+	gFont = TTF_OpenFont(Gamedata::getInstance().getXmlStr("font/file").c_str(), 28);
 }
 
 LTexture::~LTexture()
