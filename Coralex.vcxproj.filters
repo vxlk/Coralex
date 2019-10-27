@@ -16,6 +16,9 @@
     <Filter Include="Source Files\UI">
       <UniqueIdentifier>{774a2860-37af-4513-9f5b-2b8fd6074810}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Language">
+      <UniqueIdentifier>{e0860a0d-2711-46cd-8c1e-53dd6190577f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\bullet.cpp">
@@ -120,6 +123,15 @@
     <ClCompile Include="src\UI\customTexture.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="src\language\langMain.cpp">
+      <Filter>Source Files\Language</Filter>
+    </ClCompile>
+    <ClCompile Include="src\language\parser.cpp">
+      <Filter>Source Files\Language</Filter>
+    </ClCompile>
+    <ClCompile Include="src\language\interpreter.cpp">
+      <Filter>Source Files\Language</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\bullet.h">
@@ -209,14 +221,8 @@
     <ClInclude Include="src\world.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="StateManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\StateManager.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="guid.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\guid.h">
       <Filter>Source Files</Filter>
@@ -233,8 +239,14 @@
     <ClInclude Include="src\UI\customTexture.h">
       <Filter>Source Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="src\UI\dictionary.h">
-      <Filter>Source Files\UI</Filter>
+    <ClInclude Include="src\language\parser.hpp">
+      <Filter>Source Files\Language</Filter>
+    </ClInclude>
+    <ClInclude Include="src\language\interpreter.hpp">
+      <Filter>Source Files\Language</Filter>
+    </ClInclude>
+    <ClInclude Include="src\language\dictionary.hpp">
+      <Filter>Source Files\Language</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
