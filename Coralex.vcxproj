@@ -182,8 +182,12 @@
     <ClInclude Include="src\image.h" />
     <ClInclude Include="src\imageFactory.h" />
     <ClInclude Include="src\ioMod.h" />
+    <ClInclude Include="src\language\basicFunctions.hpp" />
+    <ClInclude Include="src\language\basicTypes.hpp" />
+    <ClInclude Include="src\language\blob.hpp" />
     <ClInclude Include="src\language\dictionary.hpp" />
     <ClInclude Include="src\language\interpreter.hpp" />
+    <ClInclude Include="src\language\langMain.hpp" />
     <ClInclude Include="src\language\parser.hpp" />
     <ClInclude Include="src\menu.h" />
     <ClInclude Include="src\menuEngine.h" />
