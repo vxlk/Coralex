@@ -4,7 +4,12 @@
 
 namespace lang {
 
+/// todo : typename to enum
+
+/// every type traversing the program is going to do so with a type name attached
+/// this is done for easy type comparing
 namespace typeKeys {
+
 	constexpr static auto Int         = "Integer";
 	constexpr static auto UnsignedInt = "Unsigned Integer";
 	constexpr static auto Double      = "Double";

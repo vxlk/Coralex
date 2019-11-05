@@ -1,1 +1,3 @@
-ask chebert what function{}() does
+how to tell a parser that up next is the guid
+puts a limit on what can be in the name of the object..
+
