@@ -12,6 +12,7 @@ namespace lang {
 class Parser {
 
 	std::string contents;
+	Interpreter 
 
 public:
 	void run(const std::string& fileContents);
