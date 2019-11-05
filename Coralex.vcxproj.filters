@@ -248,6 +248,18 @@
     <ClInclude Include="src\language\dictionary.hpp">
       <Filter>Source Files\Language</Filter>
     </ClInclude>
+    <ClInclude Include="src\language\langMain.hpp">
+      <Filter>Source Files\Language</Filter>
+    </ClInclude>
+    <ClInclude Include="src\language\blob.hpp">
+      <Filter>Source Files\Language</Filter>
+    </ClInclude>
+    <ClInclude Include="src\language\basicFunctions.hpp">
+      <Filter>Source Files\Language</Filter>
+    </ClInclude>
+    <ClInclude Include="src\language\basicTypes.hpp">
+      <Filter>Source Files\Language</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Makefile">
