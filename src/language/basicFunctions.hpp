@@ -14,7 +14,7 @@ namespace basicFunctions {
 
 	auto subtract = [](const auto& lhs, const auto& rhs) { return lhs - rhs; };
 
-	auto divide = [](const auto& lhs, const auto& rhs) { return lhs / rhs; }
+	auto divide = [](const auto& lhs, const auto& rhs) { return lhs / rhs; };
 
 	auto multiply = [](const auto& lhs, const auto& rhs) { return lhs * rhs; };
 

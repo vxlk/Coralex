@@ -46,10 +46,10 @@ public:
 									  std::vector<std::pair<std::string, //list of function names 
 							          std::function<void(Blob&)>>>>>;  //list of functions
 
-	std::string&& toString();
-	Blob&&		  fromString(const std::string&);
+	static std::string&&  toString();
+	static Blob&&		  fromString(const std::string&);
 
-	Blob&&		  castData(const std::string& name, const std::string& type, const std::string& newType);
+	static Blob&&		  castData(const std::string& name, const std::string& type, const std::string& newType);
 
 	typeKeys::IntType    getInt(const std::string& varName);
 	typeKeys::UIntType   getUInt(const std::string& varName);

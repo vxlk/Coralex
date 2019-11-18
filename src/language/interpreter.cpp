@@ -5,11 +5,19 @@ namespace lang {
 
 Blob Interpreter::ExtractArgs(const std::string &commandUnmodified) {
 	int index = 0;
-	while (commandUnmodified[index] != '(') ++index;
+	std::string typeOfArg = "";
+	std::string arg = "";
+	while (commandUnmodified[index] != '(') 
+		++index;
 	++index; // skip parenthesis
 
 	// might need to check for \r\n for windows platforms
-	while(commandUnmodified[index] != '\n')
+	while (commandUnmodified[index] != '\n') {
+		while (commandUnmodified[index] != ',') {
+			
+		}
+
+	}
 }
 
 std::string Interpreter::ExtractFunctionName(const std::string& commandUnmodified) {

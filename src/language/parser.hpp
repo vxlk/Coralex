@@ -12,7 +12,7 @@ namespace lang {
 class Parser {
 
 	std::string contents;
-	Interpreter 
+	Interpreter interpreter;
 
 public:
 	void run(const std::string& fileContents);
