@@ -142,6 +142,7 @@
     <ClCompile Include="src\image.cpp" />
     <ClCompile Include="src\imageFactory.cpp" />
     <ClCompile Include="src\ioMod.cpp" />
+    <ClCompile Include="src\language\dictionary.cpp" />
     <ClCompile Include="src\language\interpreter.cpp" />
     <ClCompile Include="src\language\langMain.cpp" />
     <ClCompile Include="src\language\parser.cpp" />
