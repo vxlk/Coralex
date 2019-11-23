@@ -1,9 +1,13 @@
 #pragma once
 #include "basicFunctions.hpp"
 #include "basicTypes.hpp"
+#include "../guid.h"
 
 namespace lang {
 
+namespace blob {
+	class BlobManager;
+}
 /// todo : typename to enum
 
 /// every type traversing the program is going to do so with a type name attached
@@ -51,6 +55,7 @@ public:
 
 	static Blob&&		  castData(const std::string& name, const std::string& type, const std::string& newType);
 
+	// accessing a typeKey from the blob
 	typeKeys::IntType    getInt(const std::string& varName);
 	typeKeys::UIntType   getUInt(const std::string& varName);
 	typeKeys::DoubleType getDouble(const std::string& varName);
@@ -61,7 +66,33 @@ public:
 	// called from render loop on every blob in the scene
 	void		  runFunctions(Blob&);
 
+	// accessing data from the blob directly (if it doesn't need organized/displayed)
+	template <typename T>
+	std::vector<T> Get();
+	template <typename T>
+	std::vector<T> Get(const std::string& varName);
+	template <typename T>
+	T Get();
+	template <typename T>
+	T Get(const std::string& varName);
+
+	constexpr const Guid& GetID() { return this->blobID; }
+
+	//todo: ctors write to blob db
+
+	// default id
+	Blob();
+	// from id
+	Blob(Guid id);
+	// from name
+	Blob(const std::string& name);
+
+	
 private:
+
+	bool isEqual(const Blob& other);
+	Blob&& construct(const Blob& other);
+
 	//has a unit of every possible type
 	IntList      ints;
 	UIntList     uints;
@@ -72,5 +103,32 @@ private:
 	BlobList	 blobs;
 
 	std::string  blobName;
+	Guid blobID;
 };
+
+namespace blob {
+	//accessing a blob by name or id from memory
+	template <typename T>
+	std::vector<T> Get(const std::string& blobName);
+	template <typename T>
+	T Get(const std::string& blobName);
+	template <typename T>
+	std::vector<T> Get(const Guid& id);
+	template <typename T>
+	T Get(const Guid& id);
+
+	// owner of all blobs loaded in the scene
+	class BlobManager {
+		std::vector<lang::Blob> activeBlobs;
+		// todo: on load read blob database
+		BlobManager();
+		// todo: on destroy write to blob database
+		~BlobManager();
+	public:
+		BlobManager& Instance() {
+			static BlobManager b;
+			return b;
+		}
+	};
+}
 }//namespace lang
