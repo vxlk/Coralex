@@ -50,10 +50,10 @@ public:
 									  std::vector<std::pair<std::string, //list of function names 
 							          std::function<void(Blob&)>>>>>;  //list of functions
 
-	static std::string&&  toString();
-	static Blob&&		  fromString(const std::string&);
+	std::string&&  toString();
+	void		   fromString(const std::string&);
 
-	static Blob&&		  castData(const std::string& name, const std::string& type, const std::string& newType);
+	static Blob&&  castData(const std::string& name, const std::string& type, const std::string& newType);
 
 	// accessing a typeKey from the blob
 	typeKeys::IntType    getInt(const std::string& varName);
@@ -65,6 +65,9 @@ public:
 	
 	// called from render loop on every blob in the scene
 	void		  runFunctions(Blob&);
+	
+	const Guid& GUID() const        { return blobID; }
+	const std::string& Name() const { return blobName; }
 
 	// accessing data from the blob directly (if it doesn't need organized/displayed)
 	template <typename T>
@@ -90,8 +93,8 @@ public:
 	
 private:
 
-	bool isEqual(const Blob& other);
-	Blob&& construct(const Blob& other);
+	bool IsEqual(const Blob& other);
+	Blob&& Construct(const Blob& other);
 
 	//has a unit of every possible type
 	IntList      ints;
@@ -107,15 +110,12 @@ private:
 };
 
 namespace blob {
-	//accessing a blob by name or id from memory
+
+	//syntactic sugar for accessing a blob from the list of available blobs
+	//accessing a blob by name or id from memory, will construct if it doesnt exist
+	Blob& Get(const std::string& blobName);
 	template <typename T>
-	std::vector<T> Get(const std::string& blobName);
-	template <typename T>
-	T Get(const std::string& blobName);
-	template <typename T>
-	std::vector<T> Get(const Guid& id);
-	template <typename T>
-	T Get(const Guid& id);
+	Blob& Get(const Guid& id);
 
 	// owner of all blobs loaded in the scene
 	class BlobManager {
@@ -125,10 +125,35 @@ namespace blob {
 		// todo: on destroy write to blob database
 		~BlobManager();
 	public:
-		BlobManager& Instance() {
+		static BlobManager& Instance() {
 			static BlobManager b;
 			return b;
 		}
+
+		// Find or add a blob to process memory as well as database
+		Blob& FindOrCreate(const std::string& blobName) {
+			// todo: db
+			for (auto& blob : activeBlobs)
+				if (blob.Name() == blobName)
+					return blob;
+			Blob newBlob(blobName);
+			return newBlob;
+		}
+
+		void Destroy(const std::string& blobName) {
+			for (auto blob = activeBlobs.begin(); blob != activeBlobs.end(); ++blob)
+				if (blob->Name() == blobName) {
+					blob = activeBlobs.erase(blob);
+					break; // no point in continuing...
+				}
+		}
+
+		// todo: implement find and delete for id
 	};
+
+	inline Blob& Get(const std::string& blobName) {
+		return BlobManager::Instance().FindOrCreate(blobName);
+	}
+
 }
 }//namespace lang
