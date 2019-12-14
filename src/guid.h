@@ -14,6 +14,8 @@ class Guid
 
 public:
 
+	explicit Guid() { this->generate(); }
+
 	//todo could be optimized
 	constexpr inline const bool isInitialized() noexcept { return id.is_nil(); }
 
@@ -44,4 +46,5 @@ public:
 
 };
 
-
+// used to specify failure of some result usually
+Guid null_guid{};

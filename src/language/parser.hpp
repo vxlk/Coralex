@@ -15,6 +15,7 @@ class Parser {
 	Interpreter interpreter;
 
 public:
+
 	void run(const std::string& fileContents);
 };
 }//namespace lang

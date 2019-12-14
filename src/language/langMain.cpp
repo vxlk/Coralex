@@ -21,7 +21,7 @@ namespace lang {
 			f.seekg(0, std::ios::beg);
 
 			contents.assign((std::istreambuf_iterator<char>(f)),
-				std::istreambuf_iterator<char>());
+							 std::istreambuf_iterator<char>());
 			//get the string of the file
 			
 			//run it thru the parser

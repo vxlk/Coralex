@@ -39,18 +39,15 @@ std::string Interpreter::ExtractFunctionName(const std::string& commandUnmodifie
 
 /// public functions
 bool Interpreter::Interpret(std::string &command) {
-	//sees the command add
-	//check against function dictionary
-	//is it a match?
-	//execute
+	
+	// a line from the file is passed to this function
+	// its job is to look at it and deduce whether it is
+	// assignment, a function, or a comment and act accordingly
+	return true;
+}
 
-	// big todo here : ill want an xml with all function stuff eventually. to get this working im just
-	// gonna hard code basic functions
+void Interpreter::ActOnString(std::string& command, Interpreter::LineInterpretation) {
 
-	if (command == "add")
-		//deal with args
-		auto args = ExtractArgs(command); //args are now named arg1, arg2, etc
-		
 }
 
 }
