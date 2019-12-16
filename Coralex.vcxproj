@@ -173,6 +173,8 @@
     <ClInclude Include="src\chunk.h" />
     <ClInclude Include="src\clock.h" />
     <ClInclude Include="src\collisionStrategy.h" />
+    <ClInclude Include="src\Database\DBMS.hpp" />
+    <ClInclude Include="src\Database\DBTypes.hpp" />
     <ClInclude Include="src\Database\ITransaction.hpp" />
     <ClInclude Include="src\Database\MultiThreading.hpp" />
     <ClInclude Include="src\drawable.h" />

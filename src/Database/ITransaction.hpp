@@ -27,11 +27,11 @@ class ITransaction {
 public:
 
 	using subTransactionList_t = std::vector<SubTransaction<ITransaction>>;
-	virtual bool Create(const lang::Blob) = 0;
+	virtual bool Create (const lang::Blob) = 0;
 	virtual bool Destroy(const lang::Blob) = 0;
-	virtual bool Update(const lang::Blob) = 0;
-	virtual bool Adopt(const lang::Blob) = 0;
-	virtual bool Query(const std::string& name);
+	virtual bool Update (const lang::Blob) = 0;
+	virtual bool Adopt  (const lang::Blob) = 0;
+	virtual bool Query  (const std::string& name);
 protected:
 	subTransactionList_t m_subTransactions;
 };
