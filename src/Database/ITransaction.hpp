@@ -15,6 +15,9 @@ public:
 	enum class Type {
 		eUpdate,
 		eQuery,
+		eAdopt,
+		eCreate,
+		eDestroy
 	};
 };
 

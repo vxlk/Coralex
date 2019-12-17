@@ -133,6 +133,7 @@
     <ClCompile Include="src\chunk.cpp" />
     <ClCompile Include="src\clock.cpp" />
     <ClCompile Include="src\collisionStrategy.cpp" />
+    <ClCompile Include="src\Database\DBMS.cpp" />
     <ClCompile Include="src\engine.cpp" />
     <ClCompile Include="src\explodingSprite.cpp" />
     <ClCompile Include="src\frameGenerator.cpp" />
