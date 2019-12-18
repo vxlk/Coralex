@@ -19,12 +19,14 @@ const std::vector<DBObject>& DBMS::GetOpenFilesNoCheck() const {
 }
 
 bool DBMS::Open(DBType objectName) {
-	for (const auto& object : m_dbObjects)
+	for (auto& object : m_dbObjects)
 		if (object.first == objectName)
 			if (object.second.isOpen)
 				return false;
 			else {
-
+				// open the file
+				m_Files.insert({objectName, ParseXML(object.second.m_FilePath)});
+				object.second.isOpen = true;
 			}
 }
 } // namespace db
