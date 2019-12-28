@@ -24,12 +24,18 @@ public:
 
   const map<string, string> getXmlData() const { return xmlData; }
 
+  // todo
+  bool insertTag(string tagName, string data);
+  bool removeTag(string tagName, string data);
+
+  // todo : foreachtag, foreachtag mutable
+
   static void wrapper4Start(void *data, const char *el, const char **attr);
   static void wrapper4End(void *data, const char *el);
   static void wrapper4Chars(void *data, const char *text, int textlen);
 
-  ParseXML& operator=(const ParseXML&) = delete;
-  ParseXML(const ParseXML&) = delete;
+  //ParseXML& operator=(const ParseXML&) = delete;
+  //ParseXML(const ParseXML&) = delete;
 private:
   const string filename;
   XML_Parser parser;

@@ -34,6 +34,7 @@ class DBMS {
 
 public:
 
+	// Singleton
 	static DBMS& Get() {
 		static DBMS dbms;
 		return dbms;
