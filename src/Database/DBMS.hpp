@@ -28,8 +28,8 @@ struct DBObject {
 // todo: description - this is an important object
 class DBMS {
 	
-	std::unordered_map<DBType, DBObject> m_dbObjects;
-	std::unordered_map<DBType, ParseXML> m_Files;
+	std::unordered_map<const DBType, DBObject> m_dbObjects;
+	std::unordered_map<const DBType, ParseXML> m_Files;
 	std::vector<DBObject> m_OpenDBObjects;
 
 	// Open the database cache
@@ -38,6 +38,7 @@ class DBMS {
 
 public:
 
+	// Singleton
 	static DBMS& Get() {
 		static DBMS dbms;
 		return dbms;
