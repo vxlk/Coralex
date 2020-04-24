@@ -1,11 +1,12 @@
 #include "interpreter.hpp"
 #include "basicFunctions.hpp"
 
+
 namespace lang {
 
-Blob Interpreter::ExtractArgs(const std::string &commandUnmodified) {
+blob::Blob Interpreter::ExtractArgs(const std::string &commandUnmodified) {
 	int index = 0;
-	std::vector<Blob> args;
+	std::vector<blob::Blob> args;
 	std::string blobName;
 	unsigned long long argIndex = 0;
 	while (commandUnmodified[index] != '(') 
@@ -23,6 +24,9 @@ Blob Interpreter::ExtractArgs(const std::string &commandUnmodified) {
 		//now we are done with the name, move on to the next
 		blobName.clear();
 	}
+
+	//stub for now
+	return {};
 }
 
 // currently unsafe
@@ -50,4 +54,4 @@ void Interpreter::ActOnString(std::string& command, Interpreter::LineInterpretat
 
 }
 
-}
+} // namespace lang

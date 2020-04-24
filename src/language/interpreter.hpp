@@ -28,7 +28,9 @@ public:
 
 private:
 	void ActOnString(std::string& commandModified, LineInterpretation);
-	Blob ExtractArgs(const std::string& commandUnmodified);
+	blob::Blob ExtractArgs(const std::string& commandUnmodified);
 	std::string ExtractFunctionName(const std::string& commandUnmodified);
 
 };
+
+} // namespace lang

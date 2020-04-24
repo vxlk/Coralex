@@ -47,4 +47,4 @@ public:
 };
 
 // used to specify failure of some result usually
-Guid null_guid{};
+static Guid null_guid{};

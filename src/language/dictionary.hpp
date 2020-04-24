@@ -16,7 +16,7 @@ namespace lang {
 
 class Dictionary {
 
-	std::unordered_map<std::string, Blob> hashMap;
+	std::unordered_map<std::string, blob::Blob> hashMap;
 	ParseXML xml;
 
 	void Write();
@@ -28,7 +28,7 @@ public:
 	Dictionary();
 	virtual ~Dictionary() = default;
 
-	bool Add(std::string name, Blob data);
+	bool Add(std::string name, blob::Blob data);
 	bool Remove(std::string name);
 };
 } //namespace lang

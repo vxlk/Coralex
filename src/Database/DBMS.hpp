@@ -17,6 +17,10 @@ struct DBObject {
 	DBType m_Name;
 	std::string m_FilePath;
 	bool isOpen = false;
+
+	bool operator==(const DBObject& other) {
+		return m_Name == other.m_Name && m_FilePath == other.m_FilePath;
+	}
 };
 
 // This object represents the database management system

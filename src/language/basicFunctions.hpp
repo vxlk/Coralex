@@ -10,13 +10,13 @@ namespace lang {
 /// the building blocks of the language
 namespace basicFunctions {
 
-	auto add = [](const auto& lhs, const auto& rhs) { return lhs + rhs; };
+	static auto add = [](const auto& lhs, const auto& rhs) { return lhs + rhs; };
 
-	auto subtract = [](const auto& lhs, const auto& rhs) { return lhs - rhs; };
+	static auto subtract = [](const auto& lhs, const auto& rhs) { return lhs - rhs; };
 
-	auto divide = [](const auto& lhs, const auto& rhs) { return lhs / rhs; };
+	static auto divide = [](const auto& lhs, const auto& rhs) { return lhs / rhs; };
 
-	auto multiply = [](const auto& lhs, const auto& rhs) { return lhs * rhs; };
+	static auto multiply = [](const auto& lhs, const auto& rhs) { return lhs * rhs; };
 
 
 }//namespace basicFunctions
